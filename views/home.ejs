@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap CDN ========== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- forntawesome CDN ========== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="shortcut icon" href="/css/favicon.svg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Ghor Khuji</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- header section starts here ============== -->
+      <header>
+        <div
+          class="row header d-flex justify-content-between align-items-center"
+        >
+          <div class="col-6 col-md-3 d-flex order-1 order-md-1 py-2">
+            <div class="logo">
+              <a href="/"
+                ><h3 class="text-success fw-bold mx-2">
+                  Ghor
+                  <span class="text-muted khuji">Khuji</span>
+                  <i class="fa-solid fa-house-laptop d-none d-md-block"></i></h3
+              ></a>
+            </div>
+          </div>
+
+          <form
+            class="col-12 col-md-6 d-flex justify-content-center align-items-center order-3 order-md-2 my-2"
+          >
+            <div
+              class="search-box search-input-group d-flex w-100 w-md-75 w-lg-50"
+            >
+              <input
+                type="text"
+                class="search-input form-control"
+                placeholder="Where are you going?"
+              />
+              <button
+                type="button"
+                class="search-btn btn text-success d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-solid fa-magnifying-glass fs-5"></i>
+              </button>
+            </div>
+          </form>
+
+          <div
+            class="mx-0 col-6 col-md-3 d-flex justify-content-end order-2 order-md-3"
+          >
+            <div class="d-flex align-items-center justify-content-end gap-5">
+              <div class="create-new">
+                <a
+                  href="#"
+                  class="icon btn border border-2 rounded-pill bg-white d-flex align-items-center justify-content-center gap-2 w-100"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                  <p class="d-none d-lg-block">Post a Flat</p>
+                </a>
+              </div>
+              <div class="dropdown">
+                <button
+                  id="dropdownButton"
+                  class="dropdown-btn btn d-flex justify-content-center align-items-center gap-2 rounded-pill py-1 px-2 border-success bg-white"
+                  onclick="toggleDropdown()"
+                >
+                  <i class="fa-solid fa-bars fs-6"></i>
+                  <div
+                    class="user-icon text-white p-2 bg-success rounded-circle d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-user fs-6"></i>
+                  </div>
+                </button>
+                <div id="dropdownMenu" class="dropdown-menu">
+                  <div class="resister">
+                    <a href="#" class="text-success">Sign up</a>
+                    <a href="#" class="text-success">Log in</a>
+                  </div>
+                  <a href="#">Gift cards</a>
+                  <a href="#">Host an experience</a>
+                  <a href="#">Help Center</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- header section ends here ============== -->
+
+      <nav
+        class="container d-flex justify-content-between align-items-center w-100"
+      >
+        <div class="row">
+          <div class="col-12">
+            <ul
+              class="nav-bar d-flex justify-content-center align-items-center py-2"
+            >
+              <a href="#" class="text-muted nav-active p-2">
+                <li
+                  class="d-flex flex-column justify-content-center align-items-center gap-2"
+                >
+                  <i class="fa-solid fa-hotel fs-5"></i>
+                  <p>Flat</p>
+                </li>
+              </a>
+              <a href="#" class="mx-4 text-muted p-2">
+                <li
+                  class="d-flex flex-column justify-content-center align-items-center gap-2"
+                >
+                  <i class="fa-solid fa-bed fs-5"></i>
+                  <p>Seat</p>
+                </li>
+              </a>
+              <a href="#" class="text-muted p-2">
+                <li
+                  class="d-flex flex-column justify-content-center align-items-center gap-2"
+                >
+                  <i class="fa-solid fa-fire fs-5"></i>
+                  <p>Popular Places</p>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 btn d-flex justify-content-end">
+            <button class="btn btn-black border">
+              <i class="fa-solid fa-sliders"></i> Fillter
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- main section starts here ============== -->
+
+      <main class="container">
+        <div
+          class="row cards-container d-flex justify-content-start align-items-center"
+        >
+          <% for(let flat of flats){ %>
+          <div class="col-12 col-md-6 col-lg-3 p-0 d-flex flex-md-column">
+            <a href="#">
+              <div class="card mx-2 my-4 border-0">
+                <div class="img w-100">
+                  <img src="<%= flat.image %>" class="card-img-top" alt="..." />
+                </div>
+                <div class="card-body p-0 py-2">
+                  <h5 class="card-title fs-6 fw-bold"><%=flat.title %></h5>
+                  <p class="my-1 text-muted"><%=flat.address %></p>
+                  <p class="my-1 text-muted">
+                    <%=flat.bedrooms%> Bed - <%= flat.bathrooms %> Bath
+                  </p>
+                  <h4 class="fs-6">$<%= flat.price %></h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <% } %>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
