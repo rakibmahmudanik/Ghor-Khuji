@@ -19,6 +19,34 @@ p {
   padding: 20px 50px;
   background-color: #f8f9fa;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.animate {
+  animation-name: slide-in;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(1);
+    opacity: 1;
+  }
+}
+.sticky-header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .khuji {
@@ -31,7 +59,7 @@ p {
   left: 63px;
   font-size: 1.7rem;
   text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
-    3px 3px 0 white; /* Creates the stroke */
+    3px 3px 0 white;
 }
 
 .user-icon {
@@ -147,15 +175,6 @@ nav p {
   color: black !important;
   border-bottom: 2px solid rgb(0, 0, 0);
 }
-
-/* 
-.cards-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  row-gap: 2rem;
-} */
-
 .img {
   width: 300px;
   height: 300px;
