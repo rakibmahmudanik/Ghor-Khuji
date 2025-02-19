@@ -11,7 +11,8 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-
+const uri =
+  "mongodb+srv://rakibmahmudDB:EtkzwiWY-mAH7Sm@rakib.8rkmg.mongodb.net/Ghorkhuji";
 main()
   .then(() => {
     console.log("Connected to MongoDB");
@@ -19,12 +20,20 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/flatsDB");
+  await mongoose.connect(uri);
 }
 
 app.get("/", async (req, res) => {
   const flats = await Flat.find();
   res.render("home.ejs", { flats });
+});
+
+app.get("/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+app.get("/details", (req, res) => {
+  res.render("details.ejs");
 });
 
 app.listen(3000, () => {

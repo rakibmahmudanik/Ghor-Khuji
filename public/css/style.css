@@ -196,6 +196,27 @@ nav p {
   transform: scale(1.02);
 }
 
+footer section p {
+  margin-bottom: 1rem !important;
+  font-size: 90%;
+  color: #666;
+}
+footer section p a {
+  color: #666;
+}
+
+footer a:hover {
+  text-decoration: underline !important;
+}
+
+.footer-desc {
+  font-size: 0.8rem;
+}
+
+.social a {
+  font-size: 80%;
+}
+
 @media (max-width: 768px) {
   .icon {
     position: fixed;

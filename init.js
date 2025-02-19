@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Flat = require("./models/flats");
 
+const uri =
+  "mongodb+srv://rakibmahmudDB:EtkzwiWY-mAH7Sm@rakib.8rkmg.mongodb.net/Ghorkhuji";
 main()
   .then(() => {
     console.log("Connected to MongoDB");
@@ -8,10 +10,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/flatsDB", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  await mongoose.connect(uri);
 }
 
 const flats = [
