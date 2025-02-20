@@ -8,24 +8,152 @@
     <title></title>
   </head>
   <body>
+    <div class="container-fluid px-0">
+      <!-- header section starts here ============== -->
+      <header class="container-fluid">
+        <div
+          class="row header d-flex justify-content-between align-items-center"
+        >
+          <div class="col-6 col-md-3 d-flex order-1 order-md-1 py-2">
+            <div class="logo">
+              <a href="/"
+                ><h3 class="text-success fw-bold mx-2">
+                  Ghor
+                  <span class="text-muted khuji">Khuji</span>
+                  <i class="fa-solid fa-house-laptop d-none d-md-block"></i></h3
+              ></a>
+            </div>
+          </div>
+
+          <form
+            class="col-12 col-md-6 d-flex justify-content-center align-items-center order-3 order-md-2 my-2"
+          >
+            <div
+              class="search-box search-input-group d-flex w-100 w-md-75 w-lg-50"
+            >
+              <input
+                type="text"
+                class="search-input form-control"
+                placeholder="<%= flat.title %>"
+              />
+              <button
+                type="button"
+                class="search-btn btn text-success d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-solid fa-magnifying-glass fs-5"></i>
+              </button>
+            </div>
+          </form>
+
+          <div
+            class="mx-0 col-6 col-md-3 d-flex justify-content-end order-2 order-md-3"
+          >
+            <div class="d-flex align-items-center justify-content-end gap-5">
+              <div class="create-new">
+                <a
+                  href="http://localhost:3000/new"
+                  class="icon btn border border-2 rounded-pill bg-white d-flex align-items-center justify-content-center gap-2 w-100"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                  <p class="d-none d-lg-block">Post a Flat</p>
+                </a>
+              </div>
+
+              <div class="dropdown">
+                <button
+                  id="dropdownButton"
+                  class="dropdown-btn btn d-flex justify-content-center align-items-center gap-2 rounded-pill py-1 px-2 border-success bg-white"
+                  onclick="toggleDropdown()"
+                >
+                  <i class="fa-solid fa-bars fs-6"></i>
+                  <div
+                    class="user-icon text-white p-2 bg-success rounded-circle d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-user fs-6"></i>
+                  </div>
+                </button>
+                <div id="dropdownMenu" class="dropdown-menu">
+                  <div class="resister">
+                    <a href="#" class="text-success">Sign up</a>
+                    <a href="#" class="text-success">Log in</a>
+                  </div>
+                  <a href="#">Gift cards</a>
+                  <a href="#">Host an experience</a>
+                  <a href="#">Help Center</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- end of header -->
+
     <div class="container d-flex justify-content-center">
       <div class="content">
-        <div class="details-img">
-          <img
-            src="https://i0.wp.com/stanzaliving.wpcomstaging.com/wp-content/uploads/2024/05/74f75-diffrence-between-a-flat-and-an-apartmetn.jpg?fit=1000%2C667&ssl=1"
-            alt=""
-          />
+        <div class="top-bar d-flex justify-content-between align-items-center">
+          <h6 class="py-4 fs-4"><%=flat.title %></h6>
+
+          <div class="icons d-flex gap-4">
+            <a href="#" class="text-muted"
+              ><p
+                class="d-flex justify-content-between align-items-center gap-2"
+              >
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                <span class="d-md-block d-none">Share</span>
+              </p></a
+            >
+            <a href="#" class="text-muted"
+              ><p
+                class="d-flex justify-content-between align-items-center gap-2"
+              >
+                <i class="fa-regular fa-heart"></i>
+                <span class="d-md-block d-none">Save</span>
+              </p></a
+            >
+          </div>
+        </div>
+        <div class="details-img mb-4">
+          <img src="<%= flat.image  %>" alt="" class="rounded-4" />
         </div>
 
         <main>
-          <h3>Title</h3>
-          <p>owner name</p>
-          <p>location</p>
-          <p>discription</p>
-          <p>House/road/flat</p>
-          <p>Flat details</p>
-          <p>contact</p>
-          <h4>Price</h4>
+          <div class="title mb-4">
+            <h3><%=flat.address %></h3>
+            <p>
+              <%=flat.houseNo %>-House / <%=flat.roadNo %>-Road / <%=flat.flatNo
+              %>-flat
+            </p>
+          </div>
+          <div class="owner d-flex gap-4">
+            <div class="profile">
+              <img
+                src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
+                alt="Owner Profile pic"
+              />
+            </div>
+            <div class="name">
+              <h5><%=flat.ownerName %></h5>
+              <p class="text-muted fs-6">Owner ∙ New in platform</p>
+            </div>
+          </div>
+
+          <hr class="w-100 clearfix" />
+
+          <p>Address: <%=flat.address %></p>
+
+          <p>
+            Description: <br />
+            <%= flat.description %>
+          </p>
+
+          <p>
+            Flat details: <%=flat.bedrooms %> Bed / <%= flat.bathrooms %> Bath /
+            <%=flat.areaSize %> Sq
+          </p>
+          <p>Call: <%= flat.contactNumber %></p>
+          <h4>$<%=flat.price %></h4>
         </main>
 
         <footer></footer>

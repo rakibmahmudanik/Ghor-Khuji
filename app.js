@@ -32,8 +32,11 @@ app.get("/new", (req, res) => {
   res.render("new.ejs");
 });
 
-app.get("/details", (req, res) => {
-  res.render("details.ejs");
+app.get("/:id/details", async (req, res) => {
+  const flats = await Flat.find();
+  let { id } = req.params;
+  let flat = await Flat.findById(id);
+  res.render("details.ejs", { flat });
 });
 
 app.listen(3000, () => {
