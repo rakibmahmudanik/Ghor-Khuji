@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("dropdownButton");
   const menu = document.getElementById("dropdownMenu");
   const links = document.querySelectorAll(".nav-bar a");
+  const detailsNave = document.querySelector(".details-nav");
+  console.log(detailsNave);
 
   const header = document.querySelector("header"); // Header element select
   const scrollThreshold = 200; //  scroll korle effect apply count
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Click outside to close the menu
   document.addEventListener("click", function (event) {
     if (!button.contains(event.target) && !menu.contains(event.target)) {
+      menu.style.display = "none";
       menu.style.display = "none";
     }
   });
@@ -35,15 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > scrollThreshold) {
-      header.classList.add("sticky-header");
-      header.classList.add("animate");
+      header.classList.add("sticky-header", "animate");
+
       if (window.innerWidth <= 768) {
-        header.classList.remove("sticky-header");
-        header.classList.remove("animate");
+        header.classList.remove("sticky-header", "animate");
       }
     } else {
-      header.classList.remove("sticky-header");
-      header.classList.remove("animate");
+      header.classList.remove("sticky-header", "animate");
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 600) {
+      detailsNave.classList.add("sticky-nav", "animate");
+      detailsNave.classList.remove("d-none");
+    } else {
+      detailsNave.classList.remove("sticky-nav", "animate");
+      detailsNave.classList.add("d-none");
     }
   });
 });

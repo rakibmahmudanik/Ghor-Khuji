@@ -88,6 +88,28 @@
       </header>
     </div>
 
+    <div class="container-fluid bg-white d-none details-nav px-0">
+      <!-- header section starts here ============== -->
+      <header class="container content px-0 bg-white p-4">
+        <nav class="">
+          <ul>
+            <li class="d-inline px-2">
+              <a href="#" class="text-muted fw-bold">Photo</a>
+            </li>
+            <li class="d-inline px-2">
+              <a href="#" class="text-muted fw-bold">Flat Details</a>
+            </li>
+            <li class="d-inline px-2">
+              <a href="#" class="text-muted fw-bold">Aminities</a>
+            </li>
+            <li class="d-inline px-2">
+              <a href="#" class="text-muted fw-bold">Need to know</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
     <!-- end of header -->
 
     <div class="container d-flex justify-content-center">
@@ -119,47 +141,240 @@
         </div>
 
         <main>
-          <div class="title mb-4">
-            <h3><%=flat.address %></h3>
-            <p>
-              <%=flat.houseNo %>-House / <%=flat.roadNo %>-Road / <%=flat.flatNo
-              %>-flat
-            </p>
-          </div>
-          <div class="owner d-flex gap-4">
-            <div class="profile">
-              <img
-                src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
-                alt="Owner Profile pic"
-              />
+          <div class="details row d-flex justify-content-between my-4">
+            <div class="left-side col-12 col-lg-8">
+              <div class="title mb-4">
+                <h3><%=flat.address %></h3>
+                <p>
+                  <%=flat.houseNo %>-House / <%=flat.roadNo %>-Road /
+                  <%=flat.flatNo %>-flat
+                </p>
+              </div>
+              <div class="owner d-flex gap-4">
+                <div class="profile">
+                  <img
+                    src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
+                    alt="Owner Profile pic"
+                  />
+                </div>
+                <div class="name">
+                  <h5><%=flat.ownerName %></h5>
+                  <p class="text-muted fs-6">Owner ∙ New in platform</p>
+                </div>
+              </div>
+
+              <hr class="w-100 clearfix mb-4" />
+              <div class="address w-lg-50 mb-4">
+                <p
+                  class="d-inline-flex border rounded-4 py-3 px-3 align-items-center gap-3"
+                >
+                  <i class="fa-solid fa-location-dot text-success fs-3"></i>
+                  <span class="fs-5 text-muted"
+                    >Address: <%=flat.address %></span
+                  >
+                </p>
+              </div>
+
+              <div class="flat-details mb-4">
+                <p
+                  class="d-inline-flex border rounded-4 py-3 px-3 align-items-center gap-3"
+                >
+                  <i class="fa-solid fa-building text-success fs-3"></i>
+                  <span class="fs-5 text-muted"
+                    >Flat details: <%=flat.bedrooms %> Bed / <%= flat.bathrooms
+                    %> Bath / <%=flat.areaSize %> Sq</span
+                  >
+                </p>
+              </div>
+
+              <div class="description mb-4">
+                <p
+                  class="d-inline-flex border rounded-4 py-3 px-3 flex-column gap-1"
+                >
+                  <span class="fs-5">Description:</span>
+                  <span class="fs-6 text-muted"><%= flat.description %></span>
+                </p>
+              </div>
+
+              <div class="contact mb-4">
+                <p
+                  class="d-inline-flex border rounded-4 py-3 px-3 align-items-center gap-3"
+                >
+                  <i class="fa-solid fa-phone text-success fs-3"></i>
+                  <span class="fs-5 text-muted"
+                    >Call: <%= flat.contactNumber %></span
+                  >
+                </p>
+              </div>
+
+              <div class="price mb-4">
+                <h4
+                  class="d-inline-flex border rounded-4 py-3 px-3 align-items-center gap-3"
+                >
+                  <i class="fa-solid fa-dollar-sign text-success fs-3"></i>
+                  <span><%=flat.price %></span>
+                </h4>
+              </div>
+              <hr class="w-100 clearfix mb-5" />
+              <div id="aminities " class="aminities mb-4">
+                <h4>What this flat offers</h4>
+
+                <table class="table table-borderless">
+                  <tr class="">
+                    <td class="p-3 fs-5 text-muted">
+                      <i class="fa-solid fa-wifi fs-4"></i>Wifi
+                    </td>
+                    <td class="p-3 fs-5 text-muted">
+                      <i class="fa-solid fa-bolt fs-4"></i>Electricity
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 fs-5 text-muted">
+                      <i class="fa-solid fa-broom fs-4"></i>Cleaner
+                    </td>
+                    <td class="p-3 fs-5 text-muted">
+                      <i class="fa-solid fa-droplet fs-4"></i>Water Supplies
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="p-3 fs-5 text-muted">
+                      <i class="fa-solid fa-ban-smoking fs-4"></i>No Smoking
+                      Allowed
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <hr class="w-100 clearfix mb-5" />
+
+              <div id="rooms" class="rooms mb-5">
+                <h4 class="mb-4">Where you’ll sleep</h4>
+                <div class="room-imgs w-75">
+                  <div class="room-img">
+                    <img
+                      src="https://www.nobroker.in/blog/wp-content/uploads/2022/07/Modern-Bedroom-Design.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="room-img">
+                    <img
+                      src="https://i.pinimg.com/originals/0f/7a/0e/0f7a0e9b1e6b36bf12632b9770d55cff.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="room-img">
+                    <img
+                      src="https://media.designcafe.com/wp-content/uploads/2024/03/20225537/luxury-bedroom-interior-design.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="room-img d-flex justify-content-center align-items-center border"
+                  >
+                    <a
+                      href="#"
+                      class="fs-5 text-muted"
+                      style="text-decoration: underline !important"
+                      >See all</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="name">
-              <h5><%=flat.ownerName %></h5>
-              <p class="text-muted fs-6">Owner ∙ New in platform</p>
+
+            <div class="right-side sticky-right col-12 col-lg-4">
+              <div
+                class="text d-flex align-items-center justify-content-center shadow p-2 px-3 mb-5 bg-white rounded-2 gap-2"
+              >
+                <img
+                  src="https://www.transparentpng.com/thumb/emerald-stone/emerald-png-pictures-11.png"
+                  alt=""
+                  width="20px"
+                  height="20px"
+                />
+                <p class="fw-bold">Great find! This Flat is awsome</p>
+              </div>
+              <div
+                class="rent-box d-flex flex-column justify-content-center align-items-center shadow p-3 mb-5 bg-white rounded rounded-4 p-4"
+              >
+                <table class="table table-borderless">
+                  <tr class="">
+                    <th class="border-2 p-3">Available From</th>
+                    <td class="border-2 p-3">May 1 , 2025</td>
+                  </tr>
+                  <tr>
+                    <th class="border-2 p-3">Min. Adv Amount</th>
+                    <td class="border-2 p-3">2 months</td>
+                  </tr>
+
+                  <tr>
+                    <th class="border-2 p-3">Person Allowed</th>
+                    <td class="border-2 p-3">8 Person only</td>
+                  </tr>
+                </table>
+                <form action="">
+                  <label
+                    for="toc"
+                    class="mb-3 d-flex gap-2 align-items-center text-muted"
+                  >
+                    <input type="checkbox" id="toc" name="toc" required /> I
+                    agree to the terms and conditions.
+                  </label>
+                  <button class="text-center btn btn-success w-100">
+                    Rent now
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <hr class="w-100 clearfix mb-5" />
+            <div id="rules" class="rules mb-4">
+              <h4 class="mb-4">Things to know</h4>
+
+              <table class="table table-borderless w-100">
+                <tr>
+                  <th class="px-0">House Rules</th>
+                  <th class="px-0">Safety & Property</th>
+                  <th class="px-0">Cancellation Policy</th>
+                </tr>
+                <tr>
+                  <td class="py-2 fs-5 text-muted px-0 fs-6">
+                    Entry before 11 PM
+                  </td>
+                  <td class="py-2 fs-5 text-muted px-0 fs-6">
+                    Carbon monoxide alarm not reported
+                  </td>
+                  <td class="py-2 fs-5 text-muted px-0 fs-6" rowspan="2">
+                    For leaving the flat. <br />
+                    You have to announce it before 2 months.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2 fs-5 text-muted px-0 fs-6">
+                    Exit after 4:30 AM
+                  </td>
+                  <td class="py-2 fs-5 text-muted px-0 fs-6">
+                    Smoke alarm not reported
+                  </td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td class="py-2 fs-5 text-muted px-0 fs-6">
+                    4 Guests Maximum
+                  </td>
+                  <td></td>
+                  <td class="py-2 fs-5 text-muted px-0 fs-6">
+                    Please contact the owner for all details.
+                  </td>
+                </tr>
+              </table>
             </div>
           </div>
-
-          <hr class="w-100 clearfix" />
-
-          <p>Address: <%=flat.address %></p>
-
-          <p>
-            Description: <br />
-            <%= flat.description %>
-          </p>
-
-          <p>
-            Flat details: <%=flat.bedrooms %> Bed / <%= flat.bathrooms %> Bath /
-            <%=flat.areaSize %> Sq
-          </p>
-          <p>Call: <%= flat.contactNumber %></p>
-          <h4>$<%=flat.price %></h4>
         </main>
-
-        <footer></footer>
+        <!-- <hr class="w-100 clearfix mb-5" /> -->
       </div>
     </div>
-
-    <%- include('foot') %>
+    <%- include('footer') %> <%- include('foot') %>
   </body>
 </html>
