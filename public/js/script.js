@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.getElementById("dropdownMenu");
   const links = document.querySelectorAll(".nav-bar a");
   const detailsNave = document.querySelector(".details-nav");
+  const rightSide = document.querySelector(".right-side");
   console.log(detailsNave);
+  console.log(rightSide);
 
   const header = document.querySelector("header"); // Header element select
   const scrollThreshold = 200; //  scroll korle effect apply count
@@ -36,6 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  1550;
+
+  // rightSide.classList.add("absulute");
+
   window.addEventListener("scroll", function () {
     if (window.scrollY > scrollThreshold) {
       header.classList.add("sticky-header", "animate");
@@ -46,15 +52,26 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       header.classList.remove("sticky-header", "animate");
     }
-  });
 
-  window.addEventListener("scroll", function () {
     if (window.scrollY > 600) {
       detailsNave.classList.add("sticky-nav", "animate");
       detailsNave.classList.remove("d-none");
+      // rightSide.classList.remove("absulute");
     } else {
       detailsNave.classList.remove("sticky-nav", "animate");
       detailsNave.classList.add("d-none");
+    }
+
+    if (window.scrollY > 600 && window.scrollY < 1550) {
+      rightSide.classList.add("right-side-fixed");
+    } else {
+      rightSide.classList.remove("right-side-fixed");
+      rightSide.classList.add("right-side-absulute");
+    }
+
+    if (window.scrollY > 1550) {
+      rightSide.classList.add("right-side-relative");
+      rightSide.classList.remove("right-side-absulute");
     }
   });
 });

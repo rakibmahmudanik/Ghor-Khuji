@@ -97,13 +97,15 @@
               <a href="#" class="text-muted fw-bold">Photo</a>
             </li>
             <li class="d-inline px-2">
-              <a href="#" class="text-muted fw-bold">Flat Details</a>
+              <a href="#flat-details" class="text-muted fw-bold"
+                >Flat Details</a
+              >
             </li>
             <li class="d-inline px-2">
-              <a href="#" class="text-muted fw-bold">Aminities</a>
+              <a href="#aminities" class="text-muted fw-bold">Aminities</a>
             </li>
             <li class="d-inline px-2">
-              <a href="#" class="text-muted fw-bold">Need to know</a>
+              <a href="#rules" class="text-muted fw-bold">Need to know</a>
             </li>
           </ul>
         </nav>
@@ -112,7 +114,7 @@
 
     <!-- end of header -->
 
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center sticky-related">
       <div class="content">
         <div class="top-bar d-flex justify-content-between align-items-center">
           <h6 class="py-4 fs-4"><%=flat.title %></h6>
@@ -150,7 +152,7 @@
                   <%=flat.flatNo %>-flat
                 </p>
               </div>
-              <div class="owner d-flex gap-4">
+              <div id="flat-details" class="owner d-flex gap-4">
                 <div class="profile">
                   <img
                     src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
@@ -215,8 +217,8 @@
                   <span><%=flat.price %></span>
                 </h4>
               </div>
-              <hr class="w-100 clearfix mb-5" />
-              <div id="aminities " class="aminities mb-4">
+              <hr id="aminities" class="w-100 clearfix mb-5" />
+              <div id="aminities" class="aminities mb-4">
                 <h4>What this flat offers</h4>
 
                 <table class="table table-borderless">
@@ -282,7 +284,7 @@
               </div>
             </div>
 
-            <div class="right-side sticky-right col-12 col-lg-4">
+            <div class="right-side right-side-relative col-12 col-lg-4">
               <div
                 class="text d-flex align-items-center justify-content-center shadow p-2 px-3 mb-5 bg-white rounded-2 gap-2"
               >

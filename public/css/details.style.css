@@ -155,16 +155,35 @@ p {
   object-fit: cover;
 }
 
-main {
+/* .left-side {
   position: relative;
+} */
+
+.right-side-relative {
+  position: relative;
+  top: 975px;
+  right: 5px;
+  z-index: 1000;
+  /* width: 28%; */
 }
 
-.sticky-right {
-  position: sticky;
-  top: 0px;
-  right: 0px;
+.right-side-absulute {
+  position: absolute;
+  top: 750px;
+  right: 120px;
   z-index: 1000;
+  width: 28%;
 }
+.right-side-fixed {
+  position: fixed;
+  top: 150px;
+  right: 120px;
+  z-index: 1000;
+  width: 28%;
+}
+.absulute {
+}
+
 .sticky-nav {
   position: fixed;
   top: 0px;
