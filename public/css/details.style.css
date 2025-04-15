@@ -272,3 +272,18 @@ footer a:hover {
     width: 100% !important;
   }
 }
+
+@media (max-width: 1024px) {
+  .right-side-absulute {
+    right: 55px;
+    width: 30%;
+  }
+
+  .right-side-fixed {
+    right: 55px;
+    width: 30%;
+  }
+}
+
+@media (max-width: 1440px) {
+}

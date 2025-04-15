@@ -62,16 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
       detailsNave.classList.add("d-none");
     }
 
-    if (window.scrollY > 600 && window.scrollY < 1550) {
-      rightSide.classList.add("right-side-fixed");
-    } else {
-      rightSide.classList.remove("right-side-fixed");
-      rightSide.classList.add("right-side-absulute");
-    }
+    if (window.innerWidth > 768) {
+      if (window.scrollY > 600 && window.scrollY < 1550) {
+        rightSide.classList.add("right-side-fixed");
+      } else {
+        rightSide.classList.remove("right-side-fixed");
+        rightSide.classList.add("right-side-absulute");
+      }
 
-    if (window.scrollY > 1550) {
-      rightSide.classList.add("right-side-relative");
-      rightSide.classList.remove("right-side-absulute");
+      if (window.scrollY > 1550) {
+        rightSide.classList.add("right-side-relative");
+        rightSide.classList.remove("right-side-absulute");
+      }
+    } else {
+      rightSide.classList.remove("right-side-relative");
     }
   });
 });
